@@ -1,5 +1,5 @@
 import os
-os.system('pip uninstall requests chardet urllib3 idna certifi -y;pip install chardet urllib3 idna certifi requests')
+#os.system('pip uninstall requests chardet urllib3 idna certifi -y;pip install chardet urllib3 idna certifi requests')
 os.system('clear')
 print('\n\n Loading Module! \n')
 try:
