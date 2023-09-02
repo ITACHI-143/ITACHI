@@ -93,7 +93,7 @@ logo = """
 """
 
 def line():
-	print(f'\033[1;37m-----------------------------------------------------')
+	print('\033[1;37m-----------------------------------------------------')
 myid=uuid.uuid4().hex[:5].upper()
 try:
 	key1 = open('/data/data/com.termux/files/usr/bin/.mrakingxxx-cov', 'r').read()
