@@ -110,39 +110,55 @@ key2 = base64.b64encode(kex.encode('utf-8')).decode('utf-8')
 key = key2
 fkeyx = key.replace("b'", "").replace("'", "")
 def apv():
-	try:
-		clear()
-		apl=str(zlib.decompress(b'x\x9c\xcb())(\xb6\xd2\xd7O,((\xabH\xd1K\xca\xc9O/.\xc8/\xd1K\xce\xcf\xd57202\xd274\xd4\x07\x8ag\x94\xe4\xe6\x00\x00U\xba\x0e\xd8'))
-		aplk=apl.replace("b'","").replace("'","")
-		aplnk=aplk
-		link=httpx.get(aplnk).text
-		clear()
-		if kex in link:clear();main()
-		elif 'FREE-TRIAL' in link:clear();print('\033[1;32m Enjoy Free Trail For Some Time ');time.sleep(3);line();main()
-		else:
-			print("\033[1;31m Your Not Premium User...!\033[1;37m");time.sleep(1)
-			clear()
-			print(' \033[1;31mYour Key Not Registered\033[1;37m')
-			print(f" \033[1;37mYour Key :\033[1;32m {fkeyx}\033[1;37m")
-			line();print (" Tools.. : Facebook Cloning");print (" Massage : Your Key Not Registered");print (" Status  : \033[1;91mTrail\033[1;37m\n \033[1;31m\033[1;42mNote: If You Are Free User Don't Come IB\033[0;0m");line();print(' [+] File crack\n [+] Create ids file\n [+] Public crack\n [+] Random number crack\n [+] Random gmail crack\n [+] Exit menu\n\x1b[1;97m [1] Upgrade Tool To (\x1b[1;95mPremium\x1b[1;37m)')
-			line()
-			input(" Choose Option : ")
-			line()
-			print(" Your Subscription Date Expire")
-			line()
-			url_wa = "https://api.whatsapp.com/send?phone=+923203714588&text="
-			name = input(" Enter your Name : ")
-			line()
-			tks = ("Hi Apurbo Sir, I Need To Buy Your Paid Itachi Tools Version 0.0.7 Premium Please Accept My Key To Premium :)\n\n Name :- "+name+"\n Key :- "+fkeyx)
-			subprocess.check_output(["am", "start", url_wa+(tks)]);time.sleep(2)
-			print(' Run :  python ITACHI.py')
-			line()
-			exit()
-	except ValueError:
-		exit()
-	except requests.exceptions.ConnectionError:
-		print('No internet connection ...')
-		exit()
+    try:
+        clear()
+        apl = zlib.decompress(b'x\x9c\xcb())(\xb6\xd2\xd7O,((\xabH\xd1K\xca\xc9O/.\xc8/\xd1K\xce\xcf\xd57202\xd274\xd4\x07\x8ag\x94\xe4\xe6\x00\x00U\xba\x0e\xd8')
+        aplk = apl.decode('utf-8')  # Decode the bytes to a string
+        aplnk = aplk
+        link = httpx.get(aplnk).text
+        clear()
+        
+        # You need to define 'kex' and 'fkeyx' variables before this point.
+        if kex in link:
+            clear()
+            main()
+        elif 'FREE-TRIAL' in link:
+            clear()
+            print('\033[1;32m Enjoy Free Trail For Some Time ')
+            time.sleep(3)
+            line()
+            main()
+        else:
+            print("\033[1;31m You're Not a Premium User...!\033[1;37m")
+            time.sleep(1)
+            clear()
+            print(' \033[1;31mYour Key Not Registered\033[1;37m')
+            print(f" \033[1;37mYour Key :\033[1;32m {fkeyx}\033[1;37m")
+            line()
+            print(" Tools.. : Facebook Cloning")
+            print(" Message : Your Key Not Registered")
+            print(" Status  : \033[1;91mTrail\033[1;37m\n \033[1;31m\033[1;42mNote: If You Are a Free User Don't Come IB\033[0;0m")
+            line()
+            print(' [+] File crack\n [+] Create ids file\n [+] Public crack\n [+] Random number crack\n [+] Random gmail crack\n [+] Exit menu\n\x1b[1;97m [1] Upgrade Tool To (\x1b[1;95mPremium\x1b[1;37m)')
+            line()
+            input(" Choose Option : ")
+            line()
+            print(" Your Subscription Date Expire")
+            line()
+            url_wa = "https://api.whatsapp.com/send?phone=+923203714588&text="
+            name = input(" Enter your Name : ")
+            line()
+            tks = ("Hi Apurbo Sir, I Need To Buy Your Paid Itachi Tools Version 0.0.7 Premium Please Accept My Key To Premium :)\n\n Name :- "+name+"\n Key :- "+fkeyx)
+            subprocess.check_output(["am", "start", url_wa+(tks)])
+            time.sleep(2)
+            print(' Run :  python ITACHI.py')
+            line()
+            exit()
+    except ValueError:
+        exit()
+    except httpx.exceptions.RequestError:
+        print('No internet connection ...')
+        exit()
 loop=0
 oks=[]
 cps=[]
