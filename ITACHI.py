@@ -8,6 +8,7 @@ try:
 	from concurrent.futures import ThreadPoolExecutor as tred
 except ModuleNotFoundError:
     os.system('exit')
+	
 try:os.mkdir('/sdcard/ITACHI')
 except:pass
 os.system('p'+'i'+'p'+' un'+'inst'+'all '+' h'+'tt'+'px'+' -y'+' > /dev/null')
