@@ -1,43 +1,62 @@
 import os
-#os.system('pip uninstall requests chardet urllib3 idna certifi -y;pip install chardet urllib3 idna certifi requests')
+import subprocess
+import requests
+import zlib
+import httpx
+import json
+import time
+import re
+import random
+import sys
+import uuid
+import string
+from concurrent.futures import ThreadPoolExecutor as tred
+
+try:
+    import hashlib
+    from string import *
+except ModuleNotFoundError:
+    exit('\n Error in Module!')
+
+try:
+    os.mkdir('/sdcard/ITACHI')
+except:
+    pass
+
+os.system('pip uninstall requests chardet urllib3 idna certifi -y;pip install chardet urllib3 idna certifi requests')
 os.system('clear')
 print('\n\n Loading Module! \n')
-try:
-	import requests,json,time,re,random,sys,uuid,string,subprocess,zlib,base64,hashlib
-	from string import *
-	from concurrent.futures import ThreadPoolExecutor as tred
-except ModuleNotFoundError:
-    os.system('exit')
-	
-try:os.mkdir('/sdcard/ITACHI')
-except:pass
-os.system('p'+'i'+'p'+' un'+'inst'+'all '+' h'+'tt'+'px'+' -y'+' > /dev/null')
-os.system('p'+'i'+'p'+' install '+' h'+'tt'+'px'+' > /dev/null')
-sim_id=''
-fbsv = subprocess.check_output('getprop ro.build.version.release',shell=True).decode('utf-8').replace('\n','')
-model = subprocess.check_output('getprop ro.product.model',shell=True).decode('utf-8').replace('\n','')
-build = subprocess.check_output('getprop ro.build.id',shell=True).decode('utf-8').replace('\n','')
-fbmf = subprocess.check_output('getprop ro.product.manufacturer',shell=True).decode('utf-8').replace('\n','')
-fbbd = subprocess.check_output('getprop ro.product.brand',shell=True).decode('utf-8').replace('\n','')
-fbca = subprocess.check_output('getprop ro.product.cpu.abilist',shell=True).decode('utf-8').replace(',',':').replace('\n','')
+
+sim_id = ''
+fbsv = subprocess.check_output('getprop ro.build.version.release', shell=True).decode('utf-8').replace('\n', '')
+model = subprocess.check_output('getprop ro.product.model', shell=True).decode('utf-8').replace('\n', '')
+build = subprocess.check_output('getprop ro.build.id', shell=True).decode('utf-8').replace('\n', '')
+fbmf = subprocess.check_output('getprop ro.product.manufacturer', shell=True).decode('utf-8').replace('\n', '')
+fbbd = subprocess.check_output('getprop ro.product.brand', shell=True).decode('utf-8').replace('\n', '')
+fbca = subprocess.check_output('getprop ro.product.cpu.abilist', shell=True).decode('utf-8').replace(',', ':').replace('\n', '')
+
 def Setup():
-	try:
-		print('\n Checking for updates...')
-		url = str(zlib.decompress(b'x\x9c\xcb())(\xb6\xd2\xd7O,((\xabH\xd1K\xca\xc9O/.\xc8/\xd1K\xce\xcf\xd57202\xd274\xd4\x07\x8ag\x94\xe4\xe6\x00\x00U\xba\x0e\xd8')).replace("b'","").replace("'","")
-		if '8.7.2' in httpx.get(url).text:
-			pass
-		else:
-			print('\n Tools Update Successfully. Wait For installing \n')
-			time.sleep(1)
-			os.system('rm -rf New && python AKING.py')
-			exit()
-	except ValueError:exit()
-try:import httpx
-except:exit(' Found error in httpx module! ')
-xx=requests.get('https://raw.githubusercontent.com/AKING110/files/main/ua.txt').text.splitlines()
+    try:
+        print('\n Checking for updates...')
+        url = str(zlib.decompress(b'x\x9c\xcb())(\xb6\xd2\xd7O,((\xabH\xd1K\xca\xc9O/.\xc8/\xd1K\xce\xcf\xd57202\xd274\xd4\x07\x8ag\x94\xe4\xe6\x00\x00U\xba\x0e\xd8')).replace("b'","").replace("'","")
+        if '8.7.2' in httpx.get(url).text:
+            pass
+        else:
+            print('\n Tools Update Successfully. Wait For installing \n')
+            time.sleep(1)
+            os.system('rm -rf New && python AKING.py')
+            exit()
+    except ValueError:
+        exit()
+
+try:
+    xx = requests.get('https://raw.githubusercontent.com/AKING110/files/main/ua.txt').text.splitlines()
+except Exception as e:
+    exit('Error fetching ua.txt: ' + str(e))
+
 def clear():
-	os.system('clear')
-	print(logo)
+    os.system('clear')
+    print(logo)
 
 
 def ua33():
