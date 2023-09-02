@@ -96,15 +96,19 @@ def line():
         print('\033[1;37m----------------------------------------------')
 myid=uuid.uuid4().hex[:5].upper()
 try:
-	key1 = open('/data/data/com.termux/files/usr/bin/.mrakingxxx-cov', 'r').read()
-except:
-	kok=open('/data/data/com.termux/files/usr/bin/.mrakingxxx-cov', 'w');kok.write(myid);kok.close()
+    key1 = open('/data/data/com.termux/files/usr/bin/.mrakingxxx-cov', 'r').read()
+except FileNotFoundError:
+    myid = 'your_default_value_here'
+    kok = open('/data/data/com.termux/files/usr/bin/.mrakingxxx-cov', 'w')
+    kok.write(myid)
+    kok.close()
+
 uid = os.getuid()
 key1 = open('/data/data/com.termux/files/usr/bin/.mrakingxxx-cov', 'r').read()
-kex=(f"DEA399C78{uid}ED614F97CB{key1}3547ITACHI==")
-key2 = base64.b64encode(str(f"{kex}").encode('utf-8'))
-key=(f"{key2}")
-fkeyx = key.replace("b'","").replace("'","")
+kex = f"DEA399C78{uid}ED614F97CB{key1}3547ITACHI=="
+key2 = base64.b64encode(kex.encode('utf-8')).decode('utf-8')
+key = key2
+fkeyx = key.replace("b'", "").replace("'", "")
 def apv():
 	try:
 		clear()
