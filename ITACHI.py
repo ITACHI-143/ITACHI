@@ -1,62 +1,42 @@
 import os
-import subprocess
-import requests
-import zlib
-import httpx
-import json
-import time
-import re
-import random
-import sys
-import uuid
-import string
-from concurrent.futures import ThreadPoolExecutor as tred
-
-try:
-    import hashlib
-    from string import *
-except ModuleNotFoundError:
-    exit('\n Error in Module!')
-
-try:
-    os.mkdir('/sdcard/ITACHI')
-except:
-    pass
-
 os.system('pip uninstall requests chardet urllib3 idna certifi -y;pip install chardet urllib3 idna certifi requests')
 os.system('clear')
 print('\n\n Loading Module! \n')
-
-sim_id = ''
-fbsv = subprocess.check_output('getprop ro.build.version.release', shell=True).decode('utf-8').replace('\n', '')
-model = subprocess.check_output('getprop ro.product.model', shell=True).decode('utf-8').replace('\n', '')
-build = subprocess.check_output('getprop ro.build.id', shell=True).decode('utf-8').replace('\n', '')
-fbmf = subprocess.check_output('getprop ro.product.manufacturer', shell=True).decode('utf-8').replace('\n', '')
-fbbd = subprocess.check_output('getprop ro.product.brand', shell=True).decode('utf-8').replace('\n', '')
-fbca = subprocess.check_output('getprop ro.product.cpu.abilist', shell=True).decode('utf-8').replace(',', ':').replace('\n', '')
-
-def Setup():
-    try:
-        print('\n Checking for updates...')
-        url = str(zlib.decompress(b'x\x9c\xcb())(\xb6\xd2\xd7O,((\xabH\xd1K\xca\xc9O/.\xc8/\xd1K\xce\xcf\xd57202\xd274\xd4\x07\x8ag\x94\xe4\xe6\x00\x00U\xba\x0e\xd8')).replace("b'","").replace("'","")
-        if '8.7.2' in httpx.get(url).text:
-            pass
-        else:
-            print('\n Tools Update Successfully. Wait For installing \n')
-            time.sleep(1)
-            os.system('rm -rf New && python AKING.py')
-            exit()
-    except ValueError:
-        exit()
-
 try:
-    xx = requests.get('https://raw.githubusercontent.com/AKING110/files/main/ua.txt').text.splitlines()
-except Exception as e:
-    exit('Error fetching ua.txt: ' + str(e))
-
+	import requests,json,time,re,random,sys,uuid,string,subprocess,zlib,base64,hashlib
+	from string import *
+	from concurrent.futures import ThreadPoolExecutor as tred
+except ModuleNotFoundError:
+    exit('\n Error in Module!')
+try:os.mkdir('/sdcard/ITACHI')
+except:pass
+os.system('p'+'i'+'p'+' un'+'inst'+'all '+' h'+'tt'+'px'+' -y'+' > /dev/null')
+os.system('p'+'i'+'p'+' install '+' h'+'tt'+'px'+' > /dev/null')
+sim_id=''
+fbsv = subprocess.check_output('getprop ro.build.version.release',shell=True).decode('utf-8').replace('\n','')
+model = subprocess.check_output('getprop ro.product.model',shell=True).decode('utf-8').replace('\n','')
+build = subprocess.check_output('getprop ro.build.id',shell=True).decode('utf-8').replace('\n','')
+fbmf = subprocess.check_output('getprop ro.product.manufacturer',shell=True).decode('utf-8').replace('\n','')
+fbbd = subprocess.check_output('getprop ro.product.brand',shell=True).decode('utf-8').replace('\n','')
+fbca = subprocess.check_output('getprop ro.product.cpu.abilist',shell=True).decode('utf-8').replace(',',':').replace('\n','')
+def Setup():
+	try:
+		print('\n Checking for updates...')
+		url = str(zlib.decompress(b'x\x9c\xcb())(\xb6\xd2\xd7O,((\xabH\xd1K\xca\xc9O/.\xc8/\xd1K\xce\xcf\xd57202\xd274\xd4\x07\x8ag\x94\xe4\xe6\x00\x00U\xba\x0e\xd8')).replace("b'","").replace("'","")
+		if '8.7.2' in httpx.get(url).text:
+			pass
+		else:
+			print('\n Tools Update Successfully. Wait For installing \n')
+			time.sleep(1)
+			os.system('rm -rf New && python AKING.py')
+			exit()
+	except ValueError:exit()
+try:import httpx
+except:exit(' Found error in httpx module! ')
+xx=requests.get('https://raw.githubusercontent.com/AKING110/files/main/ua.txt').text.splitlines()
 def clear():
-    os.system('clear')
-    print(logo)
+	os.system('clear')
+	print(logo)
 
 
 def ua33():
@@ -86,79 +66,58 @@ logo = """
        88   88    dP__Yb  Yb      888888 88 
        88   88   dP\"\"\"\"Yb  YboodP 88  88 88 
 ----------------------------------------------------
-             Author    : \033[1;37mAPURBO-XD\033[0m
-             Status    : \033[1;37mPAID\033[0m
-             Version   : \033[1;32m0.0.7\033[0m
+             Author    : \033[1;37mAPURBO-XD\033[1;37m
+             Status    : \033[1;37mPAID\033[1;37m
+             Version   : \033[1;32m0.0.7\033[1;37m
 ----------------------------------------------------
 """
-
 def line():
-        print('\033[1;37m----------------------------------------------')
+	print(f'\033[1;37m-----------------------------------------------------')
 myid=uuid.uuid4().hex[:5].upper()
 try:
-    key1 = open('/data/data/com.termux/files/usr/bin/.mrakingxxx-cov', 'r').read()
-except FileNotFoundError:
-    myid = 'your_default_value_here'
-    kok = open('/data/data/com.termux/files/usr/bin/.mrakingxxx-cov', 'w')
-    kok.write(myid)
-    kok.close()
-
+	key1 = open('/data/data/com.termux/files/usr/bin/.mrakingxxx-cov', 'r').read()
+except:
+	kok=open('/data/data/com.termux/files/usr/bin/.mrakingxxx-cov', 'w');kok.write(myid);kok.close()
 uid = os.getuid()
 key1 = open('/data/data/com.termux/files/usr/bin/.mrakingxxx-cov', 'r').read()
-kex = f"DEA399C78{uid}ED614F97CB{key1}3547ITACHI=="
-key2 = base64.b64encode(kex.encode('utf-8')).decode('utf-8')
-key = key2
-fkeyx = key.replace("b'", "").replace("'", "")
+kex=(f"DEA399C78{uid}ED614F97CB{key1}3547ITACHI==")
+key2 = base64.b64encode(str(f"{kex}").encode('utf-8'))
+key=(f"{key2}")
+fkeyx = key.replace("b'","").replace("'","")
 def apv():
-    try:
-        clear()
-        apl = zlib.decompress(b'x\x9c\xcb())(\xb6\xd2\xd7O,((\xabH\xd1K\xca\xc9O/.\xc8/\xd1K\xce\xcf\xd57202\xd274\xd4\x07\x8ag\x94\xe4\xe6\x00\x00U\xba\x0e\xd8')
-        aplk = apl.decode('utf-8')  # Decode the bytes to a string
-        aplnk = aplk
-        link = httpx.get(aplnk).text
-        clear()
-        
-        # You need to define 'kex' and 'fkeyx' variables before this point.
-        if kex in link:
-            clear()
-            main()
-        elif 'FREE-TRIAL' in link:
-            clear()
-            print('\033[1;32m Enjoy Free Trail For Some Time ')
-            time.sleep(3)
-            line()
-            main()
-        else:
-            print("\033[1;31m You're Not a Premium User...!\033[1;37m")
-            time.sleep(1)
-            clear()
-            print(' \033[1;31mYour Key Not Registered\033[1;37m')
-            print(f" \033[1;37mYour Key :\033[1;32m {fkeyx}\033[1;37m")
-            line()
-            print(" Tools.. : Facebook Cloning")
-            print(" Message : Your Key Not Registered")
-            print(" Status  : \033[1;91mTrail\033[1;37m\n \033[1;31m\033[1;42mNote: If You Are a Free User Don't Come IB\033[0;0m")
-            line()
-            print(' [+] File crack\n [+] Create ids file\n [+] Public crack\n [+] Random number crack\n [+] Random gmail crack\n [+] Exit menu\n\x1b[1;97m [1] Upgrade Tool To (\x1b[1;95mPremium\x1b[1;37m)')
-            line()
-            input(" Choose Option : ")
-            line()
-            print(" Your Subscription Date Expire")
-            line()
-            url_wa = "https://api.whatsapp.com/send?phone=+923203714588&text="
-            name = input(" Enter your Name : ")
-            line()
-            tks = ("Hi Apurbo Sir, I Need To Buy Your Paid Itachi Tools Version 0.0.7 Premium Please Accept My Key To Premium :)\n\n Name :- "+name+"\n Key :- "+fkeyx)
-            subprocess.check_output(["am", "start", url_wa+(tks)])
-            time.sleep(2)
-            print(' Run :  python ITACHI.py')
-            line()
-            exit()
-    except ValueError:
-        exit()
-    except httpx.exceptions.RequestError:
-        print('No internet connection ...')
-        exit()
+	try:
+		clear()
+		apl=str(zlib.decompress(b'x\x9c\xcb())(\xb6\xd2\xd7O,((\xabH\xd1K\xca\xc9O/.\xc8/\xd1K\xce\xcf\xd57202\xd274\xd4\x07\x8ag\x94\xe4\xe6\x00\x00U\xba\x0e\xd8'))
+		aplk=apl.replace("b'","").replace("'","")
+		aplnk=aplk
+		link=httpx.get(aplnk).text
+		clear()
+		if kex in link:clear();main()
+		elif 'FREE-TRIAL' in link:clear();print('\033[1;32m Enjoy Free Trail For Some Time ');time.sleep(3);line();main()
+		else:
+			print("\033[1;31m Your Not Premium User...!\033[1;37m");time.sleep(1)
+			clear()
+			print(' \033[1;31mYour Key Not Registered\033[1;37m')
+			print(f" \033[1;37mYour Key :\033[1;32m {fkeyx}\033[1;37m")
+			line();print (" Tools.. : Facebook Cloning");print (" Massage : Your Key Not Registered");print (" Status  : \033[1;91mTrail\033[1;37m\n \033[1;31m\033[1;42mNote: If You Are Free User Don't Come IB\033[0;0m");line();print(' [+] File crack\n [+] Create ids file\n [+] Public crack\n [+] Random number crack\n [+] Random gmail crack\n [+] Exit menu\n\x1b[1;97m [1] Upgrade Tool To (\x1b[1;95mPremium\x1b[1;37m)')
+			line()
+			input(" Choose Option : ")
+			line()
+			print(" Your Subscription Date Expire")
+			line()
+			url_wa = "https://api.whatsapp.com/send?phone=+923203714588&text="
+			name = input(" Enter your Name : ")
+			line()
+			tks = ("Hi Apurbo Sir, I Need To Buy Your Paid Itachi Tools Version 0.0.7 Premium Please Accept My Key To Premium :)\n\n Name :- "+name+"\n Key :- "+fkeyx)
+			subprocess.check_output(["am", "start", url_wa+(tks)]);time.sleep(2)
+			print(' Run :  python ITACHI.py')
+			line()
+			exit()
+	except ValueError:
+		exit()
+	except requests.exceptions.ConnectionError:
+		print('No internet connection ...')
+		exit()
 loop=0
 oks=[]
 cps=[]
